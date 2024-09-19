@@ -79,6 +79,8 @@ public class CurrentAccount extends BankAccount{
 
             for (int j = freq.length - 1; j >= 0; --j) {
                 int r = freq[j];
+                int t = 0;
+                if(freq[j] == freq[0]) t = freq[0]-1;
                 //System.out.println(j +" "+r);
                 while (r > 0) {
                     for (int k = 0; k < n; ++k) {
@@ -86,7 +88,7 @@ public class CurrentAccount extends BankAccount{
                         if (ans[k] == '\u0000' && r > 0) {
                             //System.out.println(j +" "+r+" "+k );
                             ans[k] = alpha[j];
-                            ++k;
+                            k += t;
                             --r;
                         }
                     }
@@ -104,7 +106,7 @@ public class CurrentAccount extends BankAccount{
 
             tradeLicenseId = s;
         }
-       // System.out.println(tradeLicenseId);
+        System.out.println(tradeLicenseId);
 
 
 //        System.out.println("This is a valid License Id");
