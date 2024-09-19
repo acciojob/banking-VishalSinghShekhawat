@@ -77,10 +77,11 @@ public class CurrentAccount extends BankAccount{
             char[] ans = new char[n];
             //System.out.println(freq.length);
 
+            int t = 1;
+            if(freq[freq.length-1] == freq[0]) t = freq[0]-1;
+
             for (int j = freq.length - 1; j >= 0; --j) {
                 int r = freq[j];
-                int t = 0;
-                if(freq[j] == freq[0]) t = freq[0]-1;
                 //System.out.println(j +" "+r);
                 while (r > 0) {
                     for (int k = 0; k < n; ++k) {
